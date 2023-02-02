@@ -27,11 +27,19 @@ function App(){
   }
 
   function submitDetails(){
-    if(!name || !email||!gender|| !number || !password){
-      alert("All Feilds Are Required")
-    } else{
-      alert("Details Submitted")
-    }
+    if(!name || !email || !gender || !number||!password){
+          setError("All Feilds are required");
+        }
+        else if(!email.includes("@")){
+          setError("Email is invalid");
+        }
+        else if(password.length<8){
+          setError("password length should be 8");
+        }
+        else{
+          setError("");
+          alert("Hurrah! Form Submitted");
+        }
   }
 
   return (
