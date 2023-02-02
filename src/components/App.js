@@ -3,6 +3,36 @@ import '../styles/App.css';
 
 function App(){
 
+  const[name,setName] = useState("");
+  const[email,setEmail] = useState("");
+  const[gender,setGender] = useState("");
+  const[number,setNumber] = useState("");
+  const[password,setPassword] = useState("");
+  const[error,setError] =useState("");
+   
+  function nameChange(e){
+    setName(e.target.value);
+  }
+  function emailChange(e){
+    setEmail(e.target.value);
+  }
+  function genderChange(e){
+    setGender(e.target.value);
+  }
+  function numberChange(e){
+    setNumber(e.target.value);
+  }
+  function passwordChange(e){
+    setPassword(e.target.value);
+  }
+
+  function submitDetails(){
+    if(!name || !email||!gender|| !number || !password){
+      alert("All Feilds Are Required")
+    } else{
+      alert("Details Submitted")
+    }
+  }
 
   return (
     <div id="main">
